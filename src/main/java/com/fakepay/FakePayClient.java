@@ -106,10 +106,10 @@ public class FakePayClient implements ClientModInitializer {
                     }
                 } catch (NumberFormatException ignored) {
                 }
-                close();
+                returnToParent();
             }).bounds(width / 2 - 105, 115, 100, 20).build());
 
-            addRenderableWidget(Button.builder(Component.literal("Cancel"), button -> close())
+            addRenderableWidget(Button.builder(Component.literal("Cancel"), button -> returnToParent())
                     .bounds(width / 2 + 5, 115, 100, 20).build());
 
             amountField.setFocused(true);
@@ -117,11 +117,10 @@ public class FakePayClient implements ClientModInitializer {
 
         @Override
         public void onClose() {
-            close();
+            returnToParent();
         }
 
-        @Override
-        public void close() {
+        private void returnToParent() {
             Minecraft.getInstance().gui.setScreen(parent);
         }
     }
