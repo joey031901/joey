@@ -3,7 +3,7 @@ package com.fakepay;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.blaze3d.platform.InputConstants;
 import net.fabricmc.api.ClientModInitializer;
-import net.fabricmc.fabric.api.client.command.v2.ClientCommandManager;
+import net.fabricmc.fabric.api.client.command.v2.ClientCommands;
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandRegistrationCallback;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keymapping.v1.KeyMappingHelper;
@@ -61,8 +61,8 @@ public class FakePayClient implements ClientModInitializer {
     }
 
     private static void registerCommand(CommandDispatcher<net.fabricmc.fabric.api.client.command.v2.FabricClientCommandSource> dispatcher) {
-        dispatcher.register(ClientCommandManager.literal("fakepay")
-                .then(ClientCommandManager.literal("toggle").executes(context -> {
+        dispatcher.register(ClientCommands.literal("fakepay")
+                .then(ClientCommands.literal("toggle").executes(context -> {
                     fakeMode = !fakeMode;
                     FakePayConfig.save();
                     showLocalMessage("FakePay: " + (fakeMode ? "ON" : "OFF"));
