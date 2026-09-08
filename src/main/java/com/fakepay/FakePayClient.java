@@ -77,7 +77,7 @@ public class FakePayClient implements ClientModInitializer {
     public static void showLocalMessage(String message) {
         Minecraft client = Minecraft.getInstance();
         if (client.gui != null) {
-            client.gui.hud.getChat().addMessage(Component.literal(message));
+            client.gui.hud.getChat().addClientSystemMessage(Component.literal(message));
         }
     }
 
