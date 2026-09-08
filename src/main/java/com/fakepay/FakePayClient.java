@@ -29,7 +29,7 @@ public class FakePayClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         FakePayConfig.load();
-        openMenuKey = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.fakepay.open_menu", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_F4, "category.fakepay"));
+        openMenuKey = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.fakepay.open_menu", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_F4, KeyBinding.Category.MISC));
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             while (openMenuKey.wasPressed()) client.setScreen(new BalanceScreen(client.currentScreen));
         });
