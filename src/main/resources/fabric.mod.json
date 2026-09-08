@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "fakepay",
+  "version": "${version}",
+  "name": "FakePay",
+  "description": "Client-side fake pay mode for Minecraft 1.21.1.",
+  "authors": ["joey"],
+  "environment": "client",
+  "entrypoints": {
+    "client": ["com.fakepay.FakePayClient"]
+  },
+  "mixins": [],
+  "depends": {
+    "fabricloader": ">=0.16.5",
+    "fabric-api": "*",
+    "minecraft": "1.21.1",
+    "java": ">=21"
+  }
+}
