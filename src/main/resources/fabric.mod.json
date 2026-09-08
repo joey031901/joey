@@ -3,7 +3,7 @@
   "id": "fakepay",
   "version": "${version}",
   "name": "FakePay",
-  "description": "Client-side fake pay mode for Minecraft 1.21.1.",
+  "description": "Client-side fake pay mode for Minecraft 26.2.",
   "authors": ["joey"],
   "environment": "client",
   "entrypoints": {
@@ -11,9 +11,9 @@
   },
   "mixins": [],
   "depends": {
-    "fabricloader": ">=0.16.5",
+    "fabricloader": ">=0.19.3",
     "fabric-api": "*",
-    "minecraft": "1.21.1",
-    "java": ">=21"
+    "minecraft": "26.2",
+    "java": ">=25"
   }
 }
